@@ -6,24 +6,24 @@
     <title>Nawaf</title>
     <style>
         /* Base styling and black background */
-body {
-    /* Set the background image */
-    background-image: url('background.jpg'); /* Replace with your image name */
-    background-size: cover; /* Makes the image fill the entire screen */
-    background-position: center; /* Keeps the image centered */
-    background-repeat: no-repeat; /* Prevents the image from tiling/repeating */
-    background-attachment: fixed; /* Keeps the background still on mobile */
-    background-color: #000; /* Fallback color just in case the image loads slowly */
-    
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    text-align: center;
+        body {
+            /* Set the background image */
+            background-image: url('background.jpg'); /* Replace with your image name */
+            background-size: cover; /* Makes the image fill the entire screen */
+            background-position: center; /* Keeps the image centered */
+            background-repeat: no-repeat; /* Prevents the image from tiling/repeating */
+            background-attachment: fixed; /* Keeps the background still on mobile */
+            background-color: #000; /* Fallback color just in case the image loads slowly */
+            
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            text-align: center;
         }
         a3 {
             color: #ffffff5a;
@@ -42,7 +42,7 @@ body {
             box-sizing: border-box;
         }
 
-        /* CD Wrapper to handle positioning and spinning independently */
+        /* CD Wrapper to handle positioning independently */
         .cd-wrapper {
             position: relative; 
             width: 220px; /* Maintain your strict dimensions */
@@ -55,7 +55,7 @@ body {
             flex-shrink: 0;
         }
 
-        /* Square CD Image Styling & Spin Animation */
+        /* Square CD Image Styling */
         .cd-image {
             width: 220px;
             height: 220px;
@@ -64,16 +64,6 @@ body {
             transition: transform 0.5s ease;
             position: relative;
             z-index: 3; /* Keep CD on very top layer */
-        }
-
-        /* Trigger dynamic spin rotation state class */
-        .cd-image.spinning {
-            animation: spin 8s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
 
         /* When clicked: Container aligns items horizontally, wrapper shifts left */
@@ -300,8 +290,6 @@ body {
             mainContainer.classList.add('split-layout');
             cdWrapper.classList.add('shift-left');
             mainContent.classList.add('reveal');
-            
-            cdBtn.classList.add('spinning');
             
             audio.play().catch(error => {
                 console.log("Audio playback waiting for action.", error);
